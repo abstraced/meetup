@@ -2,7 +2,7 @@
   "name": "meetup",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://abstraced.github.io/meetup",     // added 
+  "homepage": "http://abstraced.github.io/meetup",     
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -13,8 +13,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",    //   added
-"deploy": "gh-pages -d build"           // added 
+    "predeploy": "npm run build",   
+"deploy": "gh-pages -d build"         
   },
   "eslintConfig": {
     "extends": "react-app"
