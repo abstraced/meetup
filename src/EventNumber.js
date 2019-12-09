@@ -19,7 +19,7 @@ class EventNumber extends Component {
 
     render () {
     return (
-    <div className="event_number">
+    <div className="EventNumber">
     <label > Number of events displayed </label>
     <input className="event_number_input" placeholder="number of event" onChange={this.handleValueChange} value={this.state.numberOfEvents}></input>   
     

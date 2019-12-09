@@ -3,11 +3,12 @@ import { shallow } from 'enzyme';
 import App from '../App';
 import EventList from '../EventList';
 import CitySearch from '../CitySearch';
+import EventNumber from '../EventNumber';
 
 describe('<App /> component', () => {
   let AppWrapper;
   beforeAll(() => {
-    AppWrapper = shallow(<App />);
+    AppWrapper = shallow(<App/>);
   });
 
   test('render list of events', () => {

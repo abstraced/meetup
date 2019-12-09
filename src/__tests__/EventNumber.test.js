@@ -12,16 +12,16 @@ describe('<EventNumber /> component', () => {
     });
 
     test('render textbox element', () => {
-      expect(EventNumberWrapper.find('.event_number')).toHaveLength(1);
+      expect(EventNumberWrapper.find('.EventNumber')).toHaveLength(1);
     });
     
     test('show number of events  label', () => {
-      expect(EventNumberWrapper.find('.event_number label')).toHaveLength(1);
+      expect(EventNumberWrapper.find('.EventNumber label')).toHaveLength(1);
     });
 
 
     test('render text input', () => {
-        expect(EventNumberWrapper .find('.event_number')).toHaveLength(1);
+        expect(EventNumberWrapper .find('.EventNumber')).toHaveLength(1);
       });
 
 
