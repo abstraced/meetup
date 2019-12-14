@@ -20,7 +20,6 @@ import { mockEvents } from './mock-events';
       return getOrRenewAccessToken('get', code);
     }
 
-    /// TEST  
     const lastSavedTime = localStorage.getItem('last_saved_time');
 
     if (accessToken && (Date.now() - lastSavedTime < 3600000)) {

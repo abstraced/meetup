@@ -25,7 +25,7 @@ class Event extends Component {
     <div className="what">What: {this.props.event.name}</div>
 
     <div className="who"> Who: 
-      { (this.props.event.group.who ) ? this.props.event.group.who : "Unknown" }
+      { (this.props.event.group ) ? this.props.event.group.who : "Unknown" }
       
      </div>
 
