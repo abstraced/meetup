@@ -36,10 +36,11 @@ class Event extends Component {
      { this.state.showDetails?
      <div className="extra_infos"> 
      <div className="address"> Address: 
-     { (this.props.event.venue.address_1 ) ? 
-     this.props.event.venue.address_1
+     { (!this.props.event.venue.address_1 ) ? 
+     "Unknown"
+     :  this.props.event.venue.address_1
      + ", " +  this.props.event.venue.city
-     + ", " + this.props.event.venue.localized_country_name : "Unknown" }
+     + ", " + this.props.event.venue.localized_country_name }
        
      {this.props.event.venue.address_1}, {this.props.event.venue.city}, {this.props.event.venue.localized_country_name}</div> 
      <div className="description">Description: {this.props.event.description}</div> 
