@@ -10,14 +10,7 @@ class CitySearch extends Component {
         suggestions: []
       };
 
-      componentDidMount () {
-        this.props.updateEvents("",""); 
-              
-
-
-
-
-      }
+      
     
 
 

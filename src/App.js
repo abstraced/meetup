@@ -15,6 +15,14 @@ class App extends Component {
 
   }
 
+  componentDidMount () {
+    updateEvents("",""); 
+          
+
+
+
+  }
+
   updateEvents = (lat, lon) => {
     getEvents(lat, lon).then(events => this.setState({ events }));
   }
