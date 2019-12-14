@@ -12,16 +12,13 @@ class App extends Component {
    events: [],
   numberOfEvents: 32
 
-
   }
-
   componentDidMount () {
-    updateEvents("",""); 
-          
-
-
-
+   
+getEvents().then(events => this.setState({ events }));
   }
+
+ 
 
   updateEvents = (lat, lon) => {
     getEvents(lat, lon).then(events => this.setState({ events }));

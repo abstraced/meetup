@@ -10,8 +10,7 @@ class CitySearch extends Component {
         suggestions: []
       };
 
-      
-    
+     
 
 
       handleInputChanged = (event) => {
