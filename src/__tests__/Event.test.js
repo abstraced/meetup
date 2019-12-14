@@ -64,7 +64,7 @@ describe('<Event /> component', () => {
   });
 
   test('test that event wrapping div is rendered', () => {
-    expect(EventWrapper.find('.event')).toHaveLength(1);
+    expect(EventWrapper.find('.Event')).toHaveLength(1);
   });
 
 
@@ -80,7 +80,7 @@ test('click on show detail change state', () => {
 });
 
 test(' if state showdisplay = false, then div has 5 childtren', () => {
-    expect(EventWrapper.find('.event').children()).toHaveLength(5);
+    expect(EventWrapper.find('.Event').children()).toHaveLength(5);
 
 });
 
