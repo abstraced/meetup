@@ -33,10 +33,10 @@ class Event extends Component {
     <div className="attending">Attending: {this.props.event.yes_rsvp_count}</div>
 
 
-     { this.state.showDetails? {
+     { this.state.showDetails? 
      <div className="extra_infos"> 
      <div className="address"> Address: 
-     { this.props.event.venue ? 
+     { (!this.props.event.venue) ? 
      "Unknown"
      :  this.props.event.venue.address_1
      + ", " +  this.props.event.venue.city
