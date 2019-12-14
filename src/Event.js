@@ -41,8 +41,7 @@ class Event extends Component {
      :  this.props.event.venue.address_1
      + ", " +  this.props.event.venue.city
      + ", " + this.props.event.venue.localized_country_name }
-       
-     {this.props.event.venue.address_1}, {this.props.event.venue.city}, {this.props.event.venue.localized_country_name}</div> 
+     </div> 
      <div className="description">Description: {this.props.event.description}</div> 
      <div className="type_of_event">Type of event: {this.props.event.visibility}</div> 
      <div className="link"> Link:  {this.props.event.link} </div> 
