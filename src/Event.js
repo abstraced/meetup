@@ -36,7 +36,7 @@ class Event extends Component {
      { this.state.showDetails?
      <div className="extra_infos"> 
      <div className="address"> Address: 
-     { (!this.props.event.venue.address_1 ) ? 
+     { (!this.props.event.venue) ? 
      "Unknown"
      :  this.props.event.venue.address_1
      + ", " +  this.props.event.venue.city
