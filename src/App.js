@@ -9,7 +9,7 @@ import { getEvents } from './api';
 class App extends Component {
 
   componentDidMount() {
-    getEvents().then(response => this.setState({ events: response.events,lat: response.city.lat, lon: response.city.lon }));
+    getEvents().then(response => this.setState({ events: response.events }));
   }
 
   state = {
@@ -21,7 +21,7 @@ class App extends Component {
 
   updateEvents = (lat, lon, page) => {
     if(lat && lon) {
-      getEvents(lat, lon, this.state.page).then(response => this.setState({ events: response.events, lat: response.city.lat, lon: response.city.lon }));
+      getEvents(lat, lon, this.state.page).then(response => this.setState({ events: response.events, lat: lat, lon: lon }));
     }
     else if (page) {
       getEvents(this.state.lat, this.state.lon, page).then(response => this.setState({ events: response.events, page: page }));
