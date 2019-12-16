@@ -75,7 +75,7 @@ import { mockEvents } from './mock-events';
       + '&access_token=' + token;
     // lat, lon is optional; if you have a lat and lon, you can add them
     if (lat && lon) {
-      url += '&lat=' + lat + '&lon=' + lon;
+      url += '&lat=' + lat + '&lon=' + lon + '&page=5';
     }
     const result = await axios.get(url);
     return result.data.events;
