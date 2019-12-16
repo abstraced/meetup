@@ -10,9 +10,7 @@ class App extends Component {
 
   state = {
    events: [],
-  numberOfEvents: 32,
-  lat:null,
-  lon:null
+  numberOfEvents: 32
 
   }
   componentDidMount () {
@@ -23,8 +21,7 @@ getEvents().then(events => this.setState({ events }));
  
 
   updateEvents = (lat, lon) => {
-    this.setState({lat:lat, lon: lon});
-    getEvents(lat,lon).then( events => this.setState({ events }));
+    getEvents(lat, lon).then(events => this.setState({ events }));
   }
 
 
