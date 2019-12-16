@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import EventNumber from './EventNumber';
@@ -21,13 +22,17 @@ class App extends Component {
 
   updateEvents = (lat, lon, page) => {
     if(lat && lon) {
-      getEvents(lat, lon, this.state.page).then(response => this.setState({ events: response.events, lat: lat, lon: lon }));
+      getEvents(lat, lon, this.state.page)
+      .then(response => this.setState({ events: response.events, lat: lat, lon: lon }));
     }
+
     else if (page) {
-      getEvents(this.state.lat, this.state.lon, page).then(response => this.setState({ events: response.events, page: page }));
+      getEvents(this.state.lat, this.state.lon, page)
+      .then(response => this.setState({ events: response.events, page: page }));
     }
     else {
-      getEvents(this.state.lat, this.state.lon, this.state.page).then(response => this.setState({ events: response.events }));
+      getEvents(this.state.lat, this.state.lon, this.state.page)
+      .then(response => this.setState({ events: response.events }));
     }
   }
 
