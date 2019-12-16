@@ -9,13 +9,12 @@ import { getEvents } from './api';
 class App extends Component {
 
   componentDidMount() {
-    getEvents().then(response => this.setState({ events: response.events, defaultCity: response.city.city, lat: response.city.lat, lon: response.city.lon }));
+    getEvents().then(response => this.setState({ events: response.events,lat: response.city.lat, lon: response.city.lon }));
   }
 
   state = {
     events: [],
     page: null,
-    defaultCity: '',
     lat: null,
     lon: null
   }
