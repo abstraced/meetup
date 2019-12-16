@@ -26,15 +26,19 @@ getEvents().then(res => this.setState({ events:res.events, lat:res.city.lat, lon
 
   updateEvents = (lat, lon,page) => {
     if (lat && lon) {
-    getEvents(lat, lon, this.state.page).then(events => this.setState({ events })).then(this.setState({lat: lat,
-      lon: lon}));
+    getEvents(lat, lon, this.state.page)
+    .then(events => this.setState({ events }))
+    .then(this.setState({lat: lat,  lon: lon}));
     }
     else if (page) {
-      getEvents(this.state.lat, this.state.lon,page).then(events => this.setState({ events })).then(this.setState({page: page}));
+      getEvents(this.state.lat, this.state.lon,page)
+      .then(res => this.setState({ events:res.events }))
+      .then(this.setState({page: page}));
 
     }
     else {
-      getEvents(this.state.lat, this.state.lon,this.state.page).then(events => this.setState({ events }));
+      getEvents(this.state.lat, this.state.lon,this.state.page)
+      .then(events => this.setState({ events }));
 
 
 

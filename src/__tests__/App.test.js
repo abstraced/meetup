@@ -65,7 +65,7 @@ describe('<App /> integration', () => {
     const EventNumberWrapper = AppWrapper.find(EventNumber);
     EventNumberWrapper.instance().handleValueChange({ target: { value: 1 } });
     expect(AppWrapper.instance().updateEvents).toHaveBeenCalledTimes(1);
-    expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith(null, null, 1);
+    expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith( 1);
     // AppWrapper.unmount();
   });
 
