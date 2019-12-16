@@ -18,10 +18,7 @@ class App extends Component {
 
   }
   componentDidMount () {
-   
-    getEvents()
-    .then(events => this.setState
-      ({ events }));
+    getEvents().then(events => this.setState({ events }));
   }
 
  
