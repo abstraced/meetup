@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class NumberOfEvents extends Component {
+class EventNumber extends Component {
 
   state = {
     numberOfEvents: 32
@@ -27,4 +27,4 @@ class NumberOfEvents extends Component {
   }
 }
 
-export default NumberOfEvents;
+export default EventNumber;
