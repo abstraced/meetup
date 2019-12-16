@@ -31,7 +31,7 @@ class App extends Component {
     }
     else if (page) {
       getEvents(this.state.lat, this.state.lon,page)
-      .then(res => this.setState({ events:res.events }))
+      .then(events => this.setState({ events }))
       .then(this.setState({page: page}));
 
     }
