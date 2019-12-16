@@ -65,7 +65,7 @@ import { mockEvents } from './mock-events';
 /// GET DATA FROM API
 
 // GET EVENT
-  async function getEvents(lat, lon) {
+  async function getEvents(lat, lon, page) {
     if (window.location.href.startsWith('http://localhost')) {
     return mockEvents.events;
   }
@@ -75,7 +75,7 @@ import { mockEvents } from './mock-events';
       + '&access_token=' + token;
     // lat, lon is optional; if you have a lat and lon, you can add them
     if (lat && lon) {
-      url += '&lat=' + lat + '&lon=' + lon + '&page=5';
+      url += '&lat=' + lat + '&lon=' + lon + '&page=' + page;
     }
     const result = await axios.get(url);
     return result.data.events;
