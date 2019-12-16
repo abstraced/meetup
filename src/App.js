@@ -38,7 +38,7 @@ getEvents().then(res => this.setState({ events:res.events, lat:res.city.lat, lon
     }
     else {
       getEvents(this.state.lat, this.state.lon,this.state.page)
-      .then(events => this.setState({ events }));
+      .then(res => this.setState({ events: res.events }));
 
 
 
