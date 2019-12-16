@@ -26,6 +26,7 @@ getEvents().then(events => this.setState({ events }));
     if (lat && lon) {
     getEvents(lat, lon, this.state.numberOfEvents).then(events => this.setState({ events })).then(this.setState({lat: lat,
       lon: lon}));
+    }
     else {
       getEvents(this.state.lat, this.state.lon,page).then(events => this.setState({ events })).then(this.setState({page: page}));
 
