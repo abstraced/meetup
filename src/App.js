@@ -3,7 +3,7 @@ import './App.css';
 
 import EventList from './EventList';
 import CitySearch from './CitySearch';
-import EventNumber from './NumberOfEvents';
+import EventNumber from './EventNumber';
 import { getEvents } from './api';
 
 class App extends Component {
