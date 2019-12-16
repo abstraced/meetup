@@ -9,7 +9,7 @@ import { getEvents } from './api';
 class App extends Component {
 
   componentDidMount() {
-    getEvents().then(response => this.setState({ events: response.events,lat: response.city.lat, lon: response.city.lon }));
+    getEvents().then(response => this.setState({ events: response.events}));
   }
 
   state = {
@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CitySearch updateEvents={this.updateEvents} defaultCity={this.state.defaultCity} />
+        <CitySearch updateEvents={this.updateEvents} />
         <EventNumber updateEvents={this.updateEvents}  />
         <EventList events={this.state.events} />
         
