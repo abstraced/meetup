@@ -19,7 +19,7 @@ class App extends Component {
   }
   componentDidMount () {
    
-getEvents().then(res => this.setState({ events:res.events, lat:res.city.lat, lon:res.city.lon }));
+getEvents().then(events => this.setState({ events, lat:res.city.lat, lon:res.city.lon }));
   }
 
  
