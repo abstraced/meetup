@@ -3,7 +3,7 @@ import './App.css';
 
 import EventList from './EventList';
 import CitySearch from './CitySearch';
-import NumberOfEvents from './NumberOfEvents';
+import EventNumber from './NumberOfEvents';
 import { getEvents } from './api';
 
 class App extends Component {
@@ -37,7 +37,7 @@ class App extends Component {
       <div className="App">
         <CitySearch updateEvents={this.updateEvents} defaultCity={this.state.defaultCity} />
         <EventList events={this.state.events} />
-        <NumberOfEvents updateEvents={this.updateEvents} numberOfEvents={this.state.events.length} lat={this.state.lat} lon={this.state.lon} />
+        <EventNumber updateEvents={this.updateEvents} numberOfEvents={this.state.events.length} lat={this.state.lat} lon={this.state.lon} />
       </div>
     );
   }
