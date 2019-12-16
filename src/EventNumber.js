@@ -11,7 +11,7 @@ class EventNumber extends Component {
 
       handleValueChange = (event) => {
         const value = event.target.value;
-        this.setState({ numberOfEvents: value })
+        this.setState({ numberOfEvents: value });
         this.props.updateEvents(value);
       }
 
