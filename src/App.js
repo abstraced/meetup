@@ -22,18 +22,20 @@ getEvents().then(events => this.setState({ events }));
 
  
 
-  updateEvents = (lat, lon) => {
+  updateCityEvents = (lat, lon) => {
     
     getEvents(lat, lon).then(events => this.setState({ events })).then(this.setState({lat: lat,
       lon: lon}));
   }
+
+   updatePage
 
 
 
   render() {
     return (
       <div className="App">
-        <CitySearch updateEvents={this.updateEvents}/>
+        <CitySearch updateCityEvents={this.updateCityEvents}/>
         <EventNumber />
         <EventList events={this.state.events} />
       </div>
