@@ -23,26 +23,16 @@ class App extends Component {
 
  
 
-  updateEvents = (lat, lon,page) => {
-    if (lat && lon) {
-    getEvents(lat, lon, this.state.page)
-    .then(events => this.setState({ events }))
-    .then(this.setState({lat: lat,  lon: lon}));
+  updateEvents = (lat, lon, page) => {
+    if(lat && lon) {
+      getEvents(lat, lon, this.state.page).then(response => this.setState({ events: response.events, lat: response.city.lat, lon: response.city.lon }));
     }
     else if (page) {
-      getEvents(this.state.lat, this.state.lon,page)
-      .then(events => this.setState({ events, page:page }))
-
-
+      getEvents(this.state.lat, this.state.lon, page).then(response => this.setState({ events: response.events, page: page }));
     }
     else {
-      getEvents(this.state.lat, this.state.lon,this.state.page)
-      .then(events => this.setState({ events }))
-
-
-
+      getEvents(this.state.lat, this.state.lon, this.state.page).then(response => this.setState({ events: response.events }));
     }
-   
   }
 
    
