@@ -74,9 +74,10 @@ import { mockEvents } from './mock-events';
     let url = 'https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public'
       + '&access_token=' + token;
     // lat, lon is optional; if you have a lat and lon, you can add them
-    if (lat && lon) {
+    if (lat && lon && page) {
       url += '&lat=' + lat + '&lon=' + lon + '&page=' + page;
     }
+    
     const result = await axios.get(url);
     return result.data.events;
   }
