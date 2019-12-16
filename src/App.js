@@ -1,27 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
+
 import EventList from './EventList';
 import CitySearch from './CitySearch';
-import EventNumber from './EventNumber';
+import NumberOfEvents from './NumberOfEvents';
 import { getEvents } from './api';
-
 
 class App extends Component {
 
-  
+  componentDidMount() {
+    getEvents().then(response => this.setState({ events: response.events, defaultCity: response.city.city, lat: response.city.lat, lon: response.city.lon }));
+  }
 
   state = {
-  events: [],
-  page: null,
-  lat: null,
-  lon: null
-
+    events: [],
+    page: null,
+    defaultCity: '',
+    lat: null,
+    lon: null
   }
-  componentDidMount () {
-    getEvents().then(events => this.setState({ events }));
-  }
-
- 
 
   updateEvents = (lat, lon, page) => {
     if(lat && lon) {
@@ -35,16 +32,12 @@ class App extends Component {
     }
   }
 
-   
-
-
-
   render() {
     return (
       <div className="App">
-        <CitySearch updateEvents={this.updateEvents}/>
-        <EventNumber updateEvents={this.updateEvents}/>
+        <CitySearch updateEvents={this.updateEvents} defaultCity={this.state.defaultCity} />
         <EventList events={this.state.events} />
+        <NumberOfEvents updateEvents={this.updateEvents} numberOfEvents={this.state.events.length} lat={this.state.lat} lon={this.state.lon} />
       </div>
     );
   }
