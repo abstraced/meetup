@@ -30,7 +30,7 @@ getEvents().then(events => this.setState({ events }));
       getEvents(this.state.lat, this.state.lon,page).then(events => this.setState({ events })).then(this.setState({page: page}));
 
     }
-    }
+   
   }
 
    
