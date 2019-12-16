@@ -32,12 +32,12 @@ class App extends Component {
     else if (page) {
       getEvents(this.state.lat, this.state.lon,page)
       .then(events => this.setState({ events:events }))
-      .then(this.setState({page: page}));
+      .then(events => this.setState({ events }))
 
     }
     else {
       getEvents(this.state.lat, this.state.lon,this.state.page)
-      .then(res => this.setState({ events: res.events }));
+      .then(events => this.setState({ events }))
 
 
 
