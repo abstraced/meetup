@@ -84,7 +84,7 @@ import { mockEvents } from './mock-events';
       url += '&lat=' + lat + '&lon=' + lon + '&page=' + page;
     }
     const result = await axios.get(url);
-    return result.data.events;
+    return result.data;
   }
    
   }
