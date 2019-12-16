@@ -9,7 +9,7 @@ import { getEvents } from './api';
 class App extends Component {
 
   state = {
-   events: [],
+  events: [],
   numberOfEvents: 32,
   lat: null,
   lon: null
