@@ -39,14 +39,15 @@ describe('<App /> integration', () => {
     CitySearchWrapper.instance().handleItemClicked('value', 1.1, 1.2);
     expect(AppWrapper.instance().updateEvents).toHaveBeenCalledTimes(1);
     expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith(1.1, 1.2);
-    // AppWrapper.unmount();
+
+    AppWrapper.unmount();
   });
   test('change state after get list of events', async () => {
     const AppWrapper = shallow(<App />);
-    AppWrapper.instance().updateEvents(1.1, 1.2);
+    AppWrapper.instance().updateEvents(1.1, 1.2,5);
     await AppWrapper.update();
     expect(AppWrapper.state('events')).toEqual(mockEvents.events);
-    // AppWrapper.unmount();
+    AppWrapper.unmount();
   });
   
 
@@ -54,7 +55,7 @@ describe('<App /> integration', () => {
     const AppWrapper = mount(<App />);
     AppWrapper.setState({ events: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }] });
     expect(AppWrapper.find('.Event')).toHaveLength(4);
-    // AppWrapper.unmount();
+    AppWrapper.unmount();
   
   });
 
@@ -63,10 +64,10 @@ describe('<App /> integration', () => {
     AppWrapper.instance().updateEvents = jest.fn();
     AppWrapper.instance().forceUpdate();
     const EventNumberWrapper = AppWrapper.find(EventNumber);
-    EventNumberWrapper.instance().handleValueChange({ target: { value: 1 } });
+    EventNumberWrapper.instance().handleInputChanged({ target: { value: 1 } });
     expect(AppWrapper.instance().updateEvents).toHaveBeenCalledTimes(1);
-    expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith( 1);
-    // AppWrapper.unmount();
+    expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith(null, null, 1);
+    AppWrapper.unmount();
   });
 
 });
