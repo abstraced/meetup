@@ -1,9 +1,10 @@
-FEATURE: FILTER EVENTS BY CITY
+Feature: FILTER EVENTS BY CITY
 
 Scenario: By default, when user hasn’t searched for a city, show upcoming events based on the user’s location
 Given user hasn’t searched for any city
 When the user opens the app
 Then the user should see the list of upcoming events from their location
+
 
 Scenario: User should see a list of suggestions when they search for a city
 Given the main page is open
