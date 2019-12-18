@@ -67,7 +67,7 @@ import { mockEvents } from './mock-events';
 // GET EVENT
   async function getEvents(lat, lon, page) {
     if (window.location.href.startsWith('http://localhost')) {
-    return mockEvents.events;
+    return mockEvents;
   }
   const token = await getAccessToken();
   if (token) {

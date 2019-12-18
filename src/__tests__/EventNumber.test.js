@@ -8,7 +8,7 @@ import EventNumber from '../EventNumber';
 describe('<EventNumber /> component', () => {
     let EventNumberWrapper ;
     beforeAll(() => {
-        EventNumberWrapper  = shallow(<EventNumber />);
+        EventNumberWrapper  = shallow(<EventNumber updateEvents={() => {}}  />);
     });
 
     test('render textbox element', () => {
