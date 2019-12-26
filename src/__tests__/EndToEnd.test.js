@@ -1,14 +1,46 @@
 import puppeteer from 'puppeteer';
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+
+// jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 
 describe('show/hide an event details', () => {
+  let browser;
+  let page;
+  beforeAll(async () => {
+    browser = await puppeteer.launch(
+      {
+      headless: true,
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+      ]
+    }
+    );
+    page = await browser.newPage();
+    await page.goto('http://localhost:3000/');
+    await page.waitForSelector('.Event');
+  });
 
-    test('An event element is collapsed by default', async () => {
-      const browser = await puppeteer.launch(); // Launches the browser
-      const page = await browser.newPage(); // Opens a new tab
-      await page.goto('https://example.com'); // Navigates to https://example.com
-      await page.screenshot({ path: 'example.png' }); // Takes a screenshot and saves it as “example.png”
-    
-      await browser.close(); // Closes the browser
-      });
+  afterAll(() => {
+    browser.close();
+  });
+
+  test('An event element is collapsed by default', async () => {
+    const extra = await page.$('.Event .extra_infos');
+    expect(extra).toBeNull();
+  });
+
+  test('User can expand an event to see its details', async () => {
+    await page.click('.Event .toggleInfos');
+
+    const extra = await page.$('.Event .extra_infos');
+    expect(extra).toBeDefined();
+  });
+
+  test('User can collapse an event to hide its details', async () => {
+    await page.click('.Event .toggleInfos');
+
+    const extra = await page.$('.Event .extra_infos');
+    expect(extra).toBeNull();
+  });
+
 });
