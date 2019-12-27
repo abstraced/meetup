@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { InfoAlert } from './Alert';
+
 class EventNumber extends Component {
 
   state = {
@@ -10,6 +12,22 @@ class EventNumber extends Component {
     const value = event.target.value;
     this.setState({ numberOfEvents: value });
     this.props.updateEvents(null, null, value);
+
+    if (value <1) {
+      this.setState({
+        infoText: 'The value cannot be negative or 0',
+      });
+     } else {
+        this.setState({
+          infoText: '',
+        });
+
+
+      
+
+
+    }
+
   }
 
   render() {
@@ -22,6 +40,7 @@ class EventNumber extends Component {
           value={this.state.numberOfEvents}
           onChange={this.handleInputChanged}
         />
+         <InfoAlert text={this.state.infoText} />
       </div>
     );
   }
