@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { WarningAlert } from './Alert';
+import { ErrorAlert } from './Alert';
 
 class EventNumber extends Component {
 
@@ -40,7 +40,7 @@ class EventNumber extends Component {
           value={this.state.numberOfEvents}
           onChange={this.handleInputChanged}
         />
-         <WarningAlert text={this.state.infoText} />
+         <ErrorAlert text={this.state.infoText} />
       </div>
     );
   }
