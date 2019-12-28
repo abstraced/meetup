@@ -100,7 +100,7 @@ if (!navigator.onLine) {
 
   ///
     const fetchApi = result.data;
-    if (fetchApi.length) { // Check if the events exist
+    if (fetchApi) { // Check if the events exist
       localStorage.setItem('fetchApi', JSON.stringify(fetchApi));
     }
 
