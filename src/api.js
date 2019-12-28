@@ -69,6 +69,16 @@ import { mockEvents } from './mock-events';
     if (window.location.href.startsWith('http://localhost')) {
     return mockEvents;
   }
+
+///
+if (!navigator.onLine) {
+  const fetchApi = localStorage.getItem('fetchApi');
+  return JSON.parse(fetchApi);
+}
+
+
+////
+
   const token = await getAccessToken();
   if (token) {
     let url = 'https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public'
@@ -84,7 +94,20 @@ import { mockEvents } from './mock-events';
       url += '&lat=' + lat + '&lon=' + lon + '&page=' + page;
     }
     const result = await axios.get(url);
-    return result.data;
+    
+    /// TEST OFFLINE
+    // return result.data;
+
+  ///
+    const fetchApi = result.data;
+    if (fetchApi.length) { // Check if the events exist
+      localStorage.setItem('fetchApi', JSON.stringify(fetchApi));
+    }
+
+    return fetchApi;
+
+
+    ////
   }
    
   }
