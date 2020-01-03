@@ -1,12 +1,40 @@
 import React, { Component } from 'react';
+import {
+  PieChart, Pie, Legend, Tooltip, Cell, ResponsiveContainer
+} from 'recharts';
+
+
+
 
 class Event extends Component {
     
+
+
+ 
 
     state = {
       showDetails:false,
 
 
+    }
+
+    
+    getData = () => {
+      const rvsp= this.props.event.yes_rsvp_count;
+      const freeSlots=  this.props.event.rsvp_limit - rvsp;
+      const rvspData = [{name:'Reservations',value:rvsp,color:'red'},
+    {name:'Free Slots', value : freeSlots, color:'blue'}]
+
+
+    // const rvspData = [{name:'Reservation',value: this.props.event.yes_rsvp_count},
+    // {name:'Free slots',value: (this.props.event.yes_rsvp_count - this.props.event.rsvp_limit) }];
+    // name value
+
+    // 2 value: free slot / booked slot
+
+
+
+    return rvspData
     }
 
 
@@ -28,7 +56,21 @@ class Event extends Component {
       { (this.props.event.group ) ? this.props.event.group.who : "Unknown" }
       
      </div>
-
+     { !this.props.event.rsvp_limit? <div> Unlimited places </div>:
+      <ResponsiveContainer height={200}>
+     <PieChart >
+     <Pie dataKey="value" isAnimationActive={true} data={this.getData()}  fill="#8884d8" label >
+  
+     {
+          	this.getData().map((item) => <Cell fill={item.color}/>)
+          }
+          </Pie>
+     <Tooltip />
+     <Legend verticalAlign="middle" align="left" />
+   </PieChart>
+   </ResponsiveContainer>
+     }
+     
 
     <div className="attending">Attending: {this.props.event.yes_rsvp_count}</div>
 
