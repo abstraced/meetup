@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
   padding: 2% 5%;
@@ -201,14 +202,16 @@ background-color: white;
   border: 2px black solid;
   display: grid;
   
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   vertical-align: middle;
   /* grid-template-rows: auto; */
   grid-template-areas: 
    
     
-    ". description address"
-    "type_of_event . link"
+    "description description address"
+    "description description type_of_event"
+    "description description link"
+    
     ;
     vertical-align: middle;
     background-color: #F7F7FF;
@@ -238,4 +241,46 @@ background-color: white;
 background-color: #FE5F55;
 
 }
+
+@media all and (max-width: 800px) {
+  .Event  {
+   
+  
+    display: grid;
+    grid-template-columns: 1fr  1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "date  who"
+      "what chart"
+      "attending  chart"
+      "toggleInfos toggleInfos "
+      "extra_infos extra_infos "
+     
+      ;
+      
+  }
+  
+  .extra_infos {
+   
+    
+    border-radius: 15px;
+    border: 2px black solid;
+    display: grid;
+    
+    grid-template-columns: 2fr  1fr;
+    vertical-align: middle;
+    /* grid-template-rows: auto; */
+    grid-template-areas: 
+     
+      
+      " description address"
+      " description type_of_event"
+      " description link"
+     
+      ;
+}
+
+
+}
+
   
