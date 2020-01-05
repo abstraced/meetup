@@ -87,7 +87,7 @@ class Event extends Component {
      + ", " +  this.props.event.venue.city
      + ", " + this.props.event.venue.localized_country_name }
      </div> 
-     <div className="description" dangerouslySetInnerHTML={{ __html: this.props.event.description}}><span className="theWs">Description:</span> </div> 
+     <div className="description" ><span className="theWs">Description:</span> </div> 
      <div className="type_of_event"><span className="theWs">Type of event:</span> {this.props.event.visibility}</div> 
      <div className="link"> <span className="theWs">Link: </span> {this.props.event.link} </div> 
 
