@@ -224,7 +224,7 @@ background-color: white;
 }
 
 .title {
-
+  margin-bottom: 30px;
   background-color: #577399;
   color:white;
   border: 8px #FE5F55 solid;
