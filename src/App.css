@@ -1,6 +1,9 @@
 .App {
   text-align: center;
   padding: 2% 5%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  background-color: #495867;
 }
 
 .App * {
@@ -60,13 +63,27 @@ input[type="text"], input[type="number"] {
   background-color: #BCDCDB;
 }
 
-.Event {
+.parameters {
   padding: 10px 10px 20px;
   margin-bottom: 10px;
-  text-align: left;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  position: relative;
+  text-align: middle;
+  vertical-align: middle;
+  
+  border-radius: 50px;
+  
+  background-color: #BDD5EA;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+
+
+}
+
+
+
+#chart {
+background-color: white;
+
+
 }
 
 .details-btn {
@@ -102,3 +119,123 @@ input[type="text"], input[type="number"] {
   margin: 20px 0 50px;
   text-align: right;
 }
+
+
+
+
+
+.date {
+    grid-area: date;
+}
+
+.what {
+    grid-area: what;
+}
+
+.who{
+    grid-area: who;
+}
+
+.chart {
+    grid-area: chart;
+
+}
+
+.attending{
+    grid-area: attending;
+}
+
+
+.extra_infos .address {
+    grid-area: address;
+   
+}
+.description{
+    grid-area: description;
+}
+.type_of_event{
+    grid-area: type_of_event;
+}
+.link  {
+    grid-area: link;
+}
+.toggleInfos {
+    grid-area: toggleInfos;
+}
+
+.extra_infos {
+  grid-area: extra_infos;
+}
+
+
+.Event  {
+  padding: 10px 10px 20px;
+  margin-bottom: 10px;
+  text-align: middle;
+  vertical-align: middle;
+  
+  border-radius: 15px;
+  border: 4px #FE5F55 solid;
+  background-color: #BDD5EA;
+  /* position: relative; */
+  
+
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  /* grid-template-rows: auto; */
+  grid-template-areas: 
+    "date . chart"
+    "who what chart"
+    "attending . chart"
+    ". toggleInfos ."
+    "extra_infos extra_infos extra_infos"
+   
+    ;
+    
+}
+
+.extra_infos {
+ 
+  
+  border-radius: 15px;
+  border: 2px black solid;
+  display: grid;
+  
+  grid-template-columns: 1fr 2fr 1fr;
+  vertical-align: middle;
+  /* grid-template-rows: auto; */
+  grid-template-areas: 
+   
+    
+    ". description address"
+    "type_of_event . link"
+    ;
+    vertical-align: middle;
+    background-color: #F7F7FF;
+
+}
+
+.theWs {
+  font-family: 'Amatic SC', cursive;
+
+  font-weight: 200;
+ 
+
+}
+
+.title {
+
+  background-color: #577399;
+  color:white;
+  border: 8px #FE5F55 solid;
+  border-radius: 50px;
+}
+
+.header {
+  border: 8px #FE5F55 solid;
+  border-radius: 20px;
+  background-color: #FE5F55;
+background-color: #FE5F55;
+
+}
+  

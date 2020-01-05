@@ -79,10 +79,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="title">
+        <h1> Meetup</h1>
+        <p className="theWs"> Serverless App for meetup</p>
+        </div>
+        <div className="header" >
+        <div className="parameters">
         <CitySearch updateEvents={this.updateEvents} />
         <EventNumber updateEvents={this.updateEvents}  />
+       
+        </div>
 
-        <ResponsiveContainer height={400}>
+        <ResponsiveContainer id="chart" height={400}>
         <ScatterChart          
           margin={{
             top: 20, right: 20, bottom: 20, left: 20,
@@ -95,6 +103,7 @@ class App extends Component {
           <Scatter name="A school" data={this.getData()} fill="#8884d8" />
         </ScatterChart>
         </ResponsiveContainer>
+        </div>
         
         <EventList events={this.state.events} />
         
