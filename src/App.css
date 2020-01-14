@@ -162,7 +162,7 @@ background-color: white;
 }
 .toggleInfos {
     grid-area: toggleInfos;
-    margin-bottom: 10px;;
+    margin-bottom: 10px;
 }
 
 .extra_infos {
